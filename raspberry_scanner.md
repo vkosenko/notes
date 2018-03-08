@@ -4,4 +4,9 @@
   * ` diskutil list `
   * ` diskutil unmountDisk /dev/disk4 `
   * ` sudo dd bs=1m if=2017-11-29-raspbian-stretch-lite.img of=/dev/rdisk4 conv=sync `
-  
+* enable SSH
+  * ` sudo raspi-config `
+  * ` 5 Interfacing options `
+  * ` P2 SSH `
+  * ` sudo reboot `
+ 

@@ -9,6 +9,9 @@
   * ` 5 Interfacing options `
   * ` P2 SSH `
   * ` sudo reboot `
+* fix locale
+  * ` sudo locale-gen "en_US.UTF-8" `
+  * ` sudo dpkg-reconfigure locales `
 * enable ll
   * ` echo "alias ll='ls -lah'" >> ~/.bashrc `
   * ` source ~/.bashrc `
@@ -31,5 +34,11 @@
     * ` sudo /etc/init.d/saned start `
   * scan image:
     * ` sudo scanimage -d snapscan:libusb:001:004 --format tiff --resolution 150 --mode Gray > test.tiff `
+  * add pi user to the scanner group for it to be able to be executed without root
+    * ` sudo adduser pi scanner `
+  * install ImageMagick to convert from .tiff to .jpeg
+    * ` sudo apt-get install imagemagick `
+  * convert image
+    * ` convert scan.tiff scan.jpg `
   
  

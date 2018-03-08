@@ -9,4 +9,27 @@
   * ` 5 Interfacing options `
   * ` P2 SSH `
   * ` sudo reboot `
+* enable ll
+  * ` echo "alias ll='ls -lah'" >> ~/.bashrc `
+  * ` source ~/.bashrc `
+* fix pipe
+  * ` sudo vim /etc/default/keyboard `
+  * change "gb" to "us" (XKBLAYOUT=”us”)
+* install sane
+  * check if your device is supported: http://www.sane-project.org/cgi-bin/driver.pl
+  * ` sudo apt-get update `
+  * ` sudo apt-get install sane-utils ` 
+  * check if the device is recognized: ` sudo scanimage -L `
+  * download .bin for your scanner: ` wget https://.../snape20.bin ` or get it from the scanner CD
+  * create folder to place .bin to: ` sudo mkdir -p /usr/share/sane/snapscan `
+  * ` sudo cp ~/snape20.bin /usr/share/sane/snapscan `
+  * adjust the firmware in the snapscan config: ` sudo vim /etc/sane.d/snapscan.conf `
+    * ` firmware /usr/share/sane/snapscan/snape20.bin ` 
+  * set saned to run start automatically:
+    * ` sudo vim /etc/default/saned `
+    * ` RUN=yes `
+    * ` sudo /etc/init.d/saned start `
+  * scan image:
+    * ` sudo scanimage -d snapscan:libusb:001:004 --format tiff --resolution 150 --mode Gray > test.tiff `
+  
  

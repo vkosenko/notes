@@ -40,5 +40,8 @@
     * ` sudo scanimage -d snapscan:libusb:001:004 --format tiff --resolution 150 --mode Gray > test.tiff `
 * convert image
     * ` convert scan.tiff scan.jpg `
+* (Optionally) install web server to be able to scan and crop 
+  * ` sudo apt-get install apache2 php7.0 php7.0-gd `
+  
   
  
